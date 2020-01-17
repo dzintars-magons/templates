@@ -12,7 +12,8 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 
-//WE CREATE A STATEMENT where we take ALL from the table which is called "tracks"
+//WE CREATE A STATEMENT and execute it
+//where we take ALL from the table which is called "tracks"
 
 $stmt = $conn->prepare("SELECT * FROM tracks");
 $stmt->execute();
