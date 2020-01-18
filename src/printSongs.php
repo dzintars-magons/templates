@@ -16,13 +16,16 @@ $columnsPrinted = false;
 foreach ($allRows as $row){
     if (!$columnsPrinted){
         foreach ($row as $key => $value){
-            echo "<span>KEY: $key </span><br>";
+            echo "<span class='column-name'>KEY: $key </span>";
         }
         $columnsPrinted = true;
         echo "<hr>";
     }
     echo "<div>";
-    echo "<span>Title: " .$row["title"] . "</span>";
+    // echo "<span>Title: " .$row["title"] . "</span>";
+    foreach ($row as $key => $value){
+        echo "<span class='value-cell'>$value</span>";
+    }
     echo "</div>";
 }
 echo "<hr>";
