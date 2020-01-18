@@ -1,0 +1,15 @@
+.value-cell {
+    display: inline-block;
+    min-width: 2%;
+}
+
+.row-column-names {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+.row-song {
+    display: flex;
+    justify-content: space-around;
+}
+
