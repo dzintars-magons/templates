@@ -1,0 +1,6 @@
+this structure : 
+
+config file 
+db.php
+printSongs.php
+index.php
