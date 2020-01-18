@@ -15,9 +15,10 @@ $columnsPrinted = false;
 foreach ($allRows as $row){
     if (!$columnsPrinted){
         foreach ($row as $key => $value){
-            echo "KEY: $key <br>";
+            echo "<span>KEY: $key </span><br>";
         }
         $columnsPrinted = true;
+        echo "<hr>";
     }
     echo "<div>";
     echo "<span>Title: " .$row["title"] . "</span>";
