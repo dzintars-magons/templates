@@ -1,6 +1,7 @@
 <?php
 require_once 'db.php';
 //we prepare a statement and execute it
+// "tracks" is a table that we have previously created
 $stmt = $conn->prepare("SELECT * FROM tracks");
 $stmt->execute();
 
