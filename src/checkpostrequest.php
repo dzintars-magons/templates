@@ -9,20 +9,4 @@
 </form>
 <?php
 
-// we just added ELSE STATEMENT to see in case there is a GET request
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    echo "We got a POST request!<br>";
-    foreach ($_POST as $key => $value) {
-        echo "We received name $key with value $value <br>";
-    }
-    if (isset($_POST['myname'])) {
-        echo "Why hello there " . $_POST['myname'] . "! <hr>";
-        $_SESSION['myname'] = $_POST['myname'];
-    }
-    var_dump ($_POST);
-} else {
-    echo "That was not a POST, most likely GET";
-}
-
 require_once '../src/templates/foot.php';

@@ -1,0 +1,11 @@
+structure : 
+
+config file 
+db.php
+printSongs.php
+index.php
+
+AND 
+
+index.php uses addSongs.php (that is a form)
+Tha form goes to processAdd.php and then redirects back to index.php
