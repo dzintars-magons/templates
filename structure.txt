@@ -9,3 +9,9 @@ AND
 
 index.php uses addSongs.php (that is a form)
 Tha form goes to processAdd.php and then redirects back to index.php
+
+AND 
+
+deleteSong.php file has $song_id = $_POST['delete'] because
+printSongs.php button has name='delete' and form has method='post' ofcourse
+
