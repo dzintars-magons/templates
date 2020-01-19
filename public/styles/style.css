@@ -26,3 +26,6 @@ body {
     justify-content: space-around;
   }
   
+  .input-value-cell { 
+    max-width: 75px;
+  }

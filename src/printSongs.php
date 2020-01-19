@@ -29,10 +29,20 @@ foreach ($allRows as $row){
     echo "<div class='update-songs'>";
     // echo "<span>Title: " .$row["title"] . "</span>";
     foreach ($row as $key => $value){
-        echo "<span class='value-cell'>$value</span>";
+        
         // TODO we need to process title, artist and length seperately as special cases
+        switch ($key) {
+            case  'title' :
+            case 'artist' :
+            case 'length' :
+                echo "<input class='input-value-cell' name='$key' value='$value'>$value</input>";
+                break;
+            default: echo "<span class='value-cell'>$value</span>";
+            break;
+
+        }
     }
-    echo "<button name='delete' value='" . $row['id'] . "'>Update</button>";
+    echo "<button name='update' value='" . $row['id'] . "'>Update</button>";
     echo "</div>";
     echo "</form>";
     //a form for deleting songs below
