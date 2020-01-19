@@ -1,15 +1,28 @@
-.value-cell {
+body {
+    background: red;
+  }
+  
+  button {
+    background: cyan;
+  }
+  
+  .value-cell {
     display: inline-block;
     min-width: 2%;
-}
-
-.row-column-names {
+  }
+  
+  .row-column-names {
     display: flex;
     justify-content: space-around;
   }
   
-.row-song {
+  /* .row-song {
+    display: flex;
+    justify-content: space-between;
+  } */
+  
+  .update-songs {
     display: flex;
     justify-content: space-around;
-}
-
+  }
+  

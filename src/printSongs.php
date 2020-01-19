@@ -26,12 +26,14 @@ foreach ($allRows as $row){
     echo "<div class='row-song'>";
     //created a form for updating below
     echo "<form action='updateSong.php' method='post'>";
+    echo "<div class='update-songs'>";
     // echo "<span>Title: " .$row["title"] . "</span>";
     foreach ($row as $key => $value){
         echo "<span class='value-cell'>$value</span>";
-        //we need to process title, artist and length seperately as special cases
+        // TODO we need to process title, artist and length seperately as special cases
     }
     echo "<button name='delete' value='" . $row['id'] . "'>Update</button>";
+    echo "</div>";
     echo "</form>";
     //a form for deleting songs below
     echo "<form action='deleteSong.php' method='post'>";
