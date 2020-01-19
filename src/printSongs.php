@@ -23,7 +23,14 @@ foreach ($allRows as $row){
         $columnsPrinted = true;
         echo "</div>";
     }
-    echo "<div class='row-song'>";
+    // if there is a row with a value for favorite (column) then class is "special", if not - then regular.row-column-names
+    if (isset($row['favorite'])) {
+        $special = "song-style-" . $row['favorite'];
+    } else {
+        $special = "song-style-null";
+    }
+    
+    echo "<div class='row-song $special'>";
     //created a form for updating below
     echo "<form action='updateSong.php' method='post'>";
     echo "<div class='update-songs'>";
