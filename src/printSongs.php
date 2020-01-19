@@ -35,7 +35,7 @@ foreach ($allRows as $row){
             case  'title' :
             case 'artist' :
             case 'length' :
-                echo "<input class='input-value-cell value-$key' name='$key' value='$value'>$value</input>";
+                echo "<input class='input-value-cell value-$key' name='$key' value='$value'></input>";
                 break;
             default: echo "<span class='value-cell'>$value</span>";
             break;
