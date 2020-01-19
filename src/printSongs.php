@@ -1,7 +1,6 @@
 <?php
 require_once 'db.php';
 //we prepare a statement and execute it
-// "tracks" is a table that we have previously created
 $stmt = $conn->prepare("SELECT * FROM tracks");
 $stmt->execute();
 
@@ -25,10 +24,16 @@ foreach ($allRows as $row){
         echo "</div>";
     }
     echo "<div class='row-song'>";
+    //created a form for updating below
+    echo "<form action='updateSong.php' method='post'>";
     // echo "<span>Title: " .$row["title"] . "</span>";
     foreach ($row as $key => $value){
         echo "<span class='value-cell'>$value</span>";
+        //we need to process title, artist and length seperately as special cases
     }
+    echo "<button name='delete' value='" . $row['id'] . "'>Update</button>";
+    echo "</form>";
+    //a form for deleting songs below
     echo "<form action='deleteSong.php' method='post'>";
     echo "<button name='delete' value='" . $row['id'] . "'>Delete</button>";
     echo "</form>";
