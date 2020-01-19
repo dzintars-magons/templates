@@ -32,6 +32,9 @@ foreach ($allRows as $row){
         
         // TODO we need to process title, artist and length seperately as special cases
         switch ($key) {
+            case 'favorite' :
+                echo "<input type='checkbox' class='value-$key' name='$key' value='$value'></input>";
+                break;
             case  'title' :
             case 'artist' :
             case 'length' :
