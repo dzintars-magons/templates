@@ -7,20 +7,25 @@
         $title = $_POST['title'];
         $artist = $_POST['artist'];
         $length = $_POST['length'];
+        //for checkboxes we only get the value when checkbox is checked
+        $isFavorite = isset($_POST['favorite']);
         // var_dump($_POST);
+        //die ("with my favorite $isFavorite);
         // die("Got song_id $song_id");
 
         // prepare and bind
         $stmt = $conn->prepare("UPDATE `tracks` 
             SET `title` = (:title),
                 `artist` = (:artist),
-                `length` = (:length)
+                `length` = (:length),
+                `favorite` = (:favorite)
             WHERE `tracks`.`id` = (:songid)");
 
         $stmt->bindParam(':songid', $song_id);
         $stmt->bindParam(':title', $title);
         $stmt->bindParam(':artist', $artist);
         $stmt->bindParam(':length', $length);
+        $stmt->bindParam(':favorite', $isFavorite);
         
         $stmt->execute();
         //we go to our index.php
