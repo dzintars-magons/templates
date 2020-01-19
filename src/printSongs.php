@@ -23,6 +23,7 @@ foreach ($allRows as $row){
         $columnsPrinted = true;
         echo "</div>";
     }
+     //JUST FOR DIFFERENT STYLE depending on whether 'favorite' is checked or not
     // if there is a row with a value for favorite (column) then class is "special", if not - then regular.row-column-names
     if (isset($row['favorite'])) {
         $special = "song-style-" . $row['favorite'];
