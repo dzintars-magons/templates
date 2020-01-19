@@ -29,3 +29,7 @@ body {
   .value-length { 
     max-width: 75px;
   }
+
+  .song-style-1 {
+    color: purple;
+  }
