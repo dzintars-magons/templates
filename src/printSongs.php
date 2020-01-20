@@ -9,7 +9,9 @@ if (!isset($_SESSION['username'])) {
 }
 
 //we prepare a statement and execute it
-$stmt = $conn->prepare("SELECT * FROM tracks");
+$stmt = $conn->prepare("SELECT * FROM tracks
+                        WHERE (user_id = :user_id)");
+$stmt->bindParam(':user_id' , $_SESSION['id']);
 $stmt->execute();
 
 //set the resulting array to associative

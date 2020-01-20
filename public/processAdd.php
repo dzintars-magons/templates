@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once '../src/db.php';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // echo "We got a POST request!<br>";
@@ -15,7 +16,7 @@
         $title = $_POST['title'];
         $artist = $_POST['artist'];
         $length = $_POST['length'];
-        $user_id = 1; //TODO add real users
+        $user_id = $_SESSION['id']; 
 
         // prepare and bind
         $stmt = $conn->prepare("INSERT INTO tracks (title, artist, length, user_id) 
