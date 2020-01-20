@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once '../src/db.php';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
@@ -23,9 +24,10 @@
 
             if (password_verify($password, $hash)){
                 echo "<br>Login worked!";
+                $_SESSION['username'] = $username;
             } else {
                 echo "<br>Login failed!";
             }
         }
-        die ("For now!");
+        header('Location: /');
     }

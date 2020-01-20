@@ -1,9 +1,11 @@
 <?php
 require_once 'db.php';
-//if the user does not have a session
+
 if (!isset($_SESSION['username'])) {
     echo "Please login to see your songs";
     return;
+} else {
+    echo "Hello there " . $_SESSION['username'] . "!<br>";
 }
 
 //we prepare a statement and execute it
@@ -29,7 +31,7 @@ foreach ($allRows as $row){
         $columnsPrinted = true;
         echo "</div>";
     }
-     //JUST FOR DIFFERENT STYLE depending on whether 'favorite' is checked or not
+    //JUST FOR DIFFERENT STYLE depending on whether 'favorite' is checked or not
     // if there is a row with a value for favorite (column) then class is "special", if not - then regular.row-column-names
     if (isset($row['favorite'])) {
         $special = "song-style-" . $row['favorite'];
