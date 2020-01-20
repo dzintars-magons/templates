@@ -1,5 +1,11 @@
 <?php
 require_once 'db.php';
+//if the user does not have a session
+if (!isset($_SESSION['username'])) {
+    echo "Please login to see your songs";
+    return;
+}
+
 //we prepare a statement and execute it
 $stmt = $conn->prepare("SELECT * FROM tracks");
 $stmt->execute();
