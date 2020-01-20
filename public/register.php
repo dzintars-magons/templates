@@ -5,7 +5,7 @@
         <h1>Registration Form</h1>
         <form action="processRegister.php" method="post">
             <input type="text" name="username" placeholder="Choose Username" required>
-            <input type="password" name="password" id="" required>
+            <input type="password" name="password" required>
             <button type="submit">Register</button>
     </div>
 <?php

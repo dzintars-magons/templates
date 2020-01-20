@@ -12,18 +12,19 @@
         // var_dump ($_POST);
 
         //we need to add song to database
-        $title = $_POST['title'];
-        $artist = $_POST['artist'];
-        $length = $_POST['length'];
-        $user_id = 1; //TODO add real users
+        $username = $_POST['username'];
+        if (strlen($_POST['password']) < 8) {
+            echo "Password too short";
+            die ("Too short!");
+        }
+        //you could check if password matches certain format
+        $hash = password_hash($_POST['password'], DEFAULT_PASSWORD);
 
         // prepare and bind
-        $stmt = $conn->prepare("INSERT INTO tracks (title, artist, length, user_id) 
-                                VALUES (:title, :artist, :length, :user_id)");
-        $stmt->bindParam(':title', $title);
-        $stmt->bindParam(':artist', $artist);
-        $stmt->bindParam(':length', $length);
-        $stmt->bindParam(':user_id', $user_id);
+        $stmt = $conn->prepare("INSERT INTO users (username, hash) 
+                                VALUES (:username, :hash)");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':hash', $hash);
         
         $stmt->execute();
         //we go to our index.php
