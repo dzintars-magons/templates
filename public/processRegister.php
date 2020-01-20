@@ -18,7 +18,7 @@
             die ("Too short!");
         }
         //you could check if password matches certain format
-        $hash = password_hash($_POST['password'], DEFAULT_PASSWORD);
+        $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
         // prepare and bind
         $stmt = $conn->prepare("INSERT INTO users (username, hash) 
