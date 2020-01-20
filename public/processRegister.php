@@ -17,6 +17,9 @@
             echo "Password too short";
             die ("Too short!");
         }
+        if ($_POST['password'] != $_POST['password2']) {
+            echo "Password mismatch";
+        }
         //you could check if password matches certain format
         $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
 
