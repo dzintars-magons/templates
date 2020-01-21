@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once '../src/db.php';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // echo "We got a POST request!<br>";
@@ -14,11 +15,11 @@
         //we need to add song to database
         $username = $_POST['username'];
         if (strlen($_POST['password']) < 8) {
-            echo "Password too short";
-            die ("Too short!");
+            // echo "Password too short";
+            header('Location: /');
         }
         if ($_POST['password'] != $_POST['password2']) {
-            echo "Password mismatch";
+            header('Location: /');
         }
         //you could check if password matches certain format
         $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
