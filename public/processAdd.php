@@ -1,5 +1,9 @@
 <?php
     session_start();
+    if (!$_SESSION['id']) {
+        header ('Location: /');
+        return; //we do not add songs for unregistered
+    }
     require_once '../src/db.php';
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // echo "We got a POST request!<br>";

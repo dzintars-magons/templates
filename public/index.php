@@ -1,4 +1,6 @@
 <?php
+//we need to start session to check if user already exists
+session_start();
 
 require_once '../src/templates/head.php';
 
