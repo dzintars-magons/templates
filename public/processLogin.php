@@ -25,7 +25,7 @@
             if (password_verify($password, $hash)){
                 echo "<br>Login worked!";
                 $_SESSION['username'] = $username;
-                $_SESSION['id'] = $allRows[0]['id'];
+                $_SESSION['id'] = (int)$allRows[0]['id'];
             } else {
                 echo "<br>Login failed!";
             }
