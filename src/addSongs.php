@@ -1,3 +1,9 @@
+<?php
+    if (!$_SESSION['username']) {
+        return;
+    }
+?>
+
 <div class="song-form">
 <form action="processAdd.php" method="post">
     <input name="title" placeholder="enter song title" required>
