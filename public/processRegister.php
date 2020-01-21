@@ -1,6 +1,8 @@
 <?php
     session_start();
     require_once '../src/db.php';
+    require_once '../src/dbutils.php';
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // echo "We got a POST request!<br>";
         // foreach ($_POST as $key => $value) {
@@ -32,7 +34,7 @@
         
         $stmt->execute();
         //we go to our index.php
-        header('Location: /');
+        checkLogin($conn, $username, $_POST['password']);
 
     } else {
         echo "That was not a POST, most likely GET";
