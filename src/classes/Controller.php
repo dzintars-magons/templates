@@ -11,6 +11,7 @@
         public function route(){
             if ($_SERVER['REQUEST_METHOD'] == 'GET'){
                 $this->getReq();
+                
             }
         }
 
