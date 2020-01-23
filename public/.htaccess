@@ -1,0 +1,5 @@
+# skaistie URLi
+RewriteEngine On    # Turn on the rewriting engine
+# RewriteRule ^read/([0-9a-zA-Z_-]*)$ read.php?id=$1 [NC,L]
+RewriteRule ^([0-9a-zA-Z_-]*)$ index.php?name=$1 [NC,L]
+RewriteRule ^read/([0-9a-zA-Z_-]*)$ index.php?read=$1 [NC,L]
