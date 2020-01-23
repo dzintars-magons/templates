@@ -1,4 +1,4 @@
-printSongs.php makes all the magic
+Model will have things concerning database
 
 structure : 
 

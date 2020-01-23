@@ -3,7 +3,8 @@
     require_once '../src/classes/View.php';
     require_once '../src/classes/Controller.php';
     //order will be important here
-    $model = new Model();
-    $controller = new Controller($model);
-    $view = new View($controller, $model);
-    $view->render();
+    $view = new View(); //for rendering
+    $model = new Model($view); //for business logic and data access
+    $controller = new Controller($model); //for routing
+    $controller->route();
+ 
